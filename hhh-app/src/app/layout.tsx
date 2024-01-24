@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className="h-full bg-white" lang="en">
-      <body className={inter.className} h-full="true"><NavBar />
+      <body style={{backgroundColor: "white"}} className={inter.className} ><NavBar />
       {children}
       </body>
     </html>

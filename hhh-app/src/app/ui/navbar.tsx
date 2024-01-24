@@ -6,6 +6,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import Image from 'next/image';
+interface NavItem {
+  name: string;
+  href: string;
+  current: boolean;
+}
+
 const navigation = [
     { name: 'Home', href: '/', current: true },
     { name: 'About', href: '/about', current: false },
@@ -16,15 +22,15 @@ const navbutton = [
   { name: 'Login', href: '/login', current: false },
   { name: 'Sign Up', href: '/register', current: false },
 ]
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+function classNames(...classes: (string | boolean)[]) {
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Example() {
     const pathname = usePathname();
   return (
-    <Disclosure as="nav" className="bg-white">
-      {({ open }) => (
+    <Disclosure>
+      {({ open }: { open: boolean }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
@@ -57,7 +63,7 @@ export default function Example() {
                         key={item.name}
                         href={item.href}
                         className={clsx(
-                            'shadow bg-white-500 hover:bg-white-400 focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded-md',
+                            'bg-white-500 hover:bg-white-400 focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded-md',
                             {
                               'bg-sky-100 text-blue-600': pathname === item.href,
                             },
