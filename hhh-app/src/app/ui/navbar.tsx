@@ -49,7 +49,7 @@ export default function Example() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center max-sm:hidden">
                   <Image
-                    src="/hhhlogo.png"
+                    src="/hhhlogo.PNG"
                     width={50}
                     height={50}
                     className="block py-[9px]"

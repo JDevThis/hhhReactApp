@@ -6,7 +6,7 @@ export default function LoginForm() {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <div className="relative w-full max-w-{300px} aspect-[70/45] justify-center">
                 <Image
-                    src="/hhhlogo.png"
+                    src="/hhhlogo.PNG"
                     fill
                     sizes="(max-width: 300px) 100vw, 700px"
                     priority
