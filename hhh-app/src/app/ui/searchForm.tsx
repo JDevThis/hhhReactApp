@@ -1,5 +1,6 @@
 'use client';
 import { Fragment, useState } from 'react'
+import { useSearchParams } from 'next/navigation';
 import { Combobox, Transition } from '@headlessui/react'
 import { CheckIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 
@@ -48,6 +49,7 @@ const filteredSearchlists =
           .includes(query.toLowerCase().replace(/\s+/g, ''))
       );
 
+      
 return (
   <div className="relative col-span-full z-50">
     <Combobox onChange={setSelected}>

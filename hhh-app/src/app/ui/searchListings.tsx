@@ -2,7 +2,7 @@
 import { Fragment, useState } from 'react'
 import Image from 'next/image';
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
-import SearchForm from '@/app/ui/searchAC';
+import SearchForm from '@/app/ui/searchForm';
 
 export default function SearchListing() {
   
