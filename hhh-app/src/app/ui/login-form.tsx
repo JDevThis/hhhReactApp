@@ -1,19 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import HhhLogo from '@/app/ui/hhh-logo';
+
 export default function LoginForm() {
     return (
         <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <div className="relative w-full max-w-{300px} aspect-[70/45] justify-center">
-                <Image
-                    src="/hhhlogo.PNG"
-                    fill
-                    sizes="(max-width: 300px) 100vw, 700px"
-                    priority
-                    className="block py-[2px]"
-                    alt="HisHerHub Logo"
-                />
-                </div>
+            <HhhLogo />
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
         </div>
 

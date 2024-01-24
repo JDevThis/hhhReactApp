@@ -1,19 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
+import HhhLogo from '@/app/ui/hhh-logo';
 export default function LoginForm() {
     return (
         <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <div className="relative w-full max-w-{300px} aspect-[70/45] justify-center">
-                <Image
-                    src="/hhhlogo.PNG"
-                    fill
-                    sizes="(max-width: 300px) 100vw, 700px"
-                    priority
-                    className="block py-[2px]"
-                    alt="HisHerHub Logo"
-                />
-                </div>
+            <HhhLogo />
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up and register your business</h2>
         </div>
 
@@ -223,7 +214,7 @@ export default function LoginForm() {
       <p className="mt-1 text-sm leading-6 text-gray-600">This information will be used when building your listing page.</p>
 
       <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-        <div className="sm:col-span-4">
+        <div className="col-span-full">
           <label htmlFor="business_website" className="block text-sm font-medium leading-6 text-gray-900 ">Website</label>
           <div className="mt-2">
             <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
@@ -232,7 +223,7 @@ export default function LoginForm() {
             </div>
           </div>
         </div>
-        <div className="sm:col-span-4">
+        <div className="col-span-full">
           <label htmlFor="business_instagram" className="block text-sm font-medium leading-6 text-gray-900 ">Instagram handle</label>
           <div className="mt-2">
             <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
@@ -241,7 +232,7 @@ export default function LoginForm() {
             </div>
           </div>
         </div>
-        <div className="sm:col-span-4">
+        <div className="col-span-full">
           <label htmlFor="business_facebook" className="block text-sm font-medium leading-6 text-gray-900 ">Facebook ID</label>
           <div className="mt-2">
             <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
