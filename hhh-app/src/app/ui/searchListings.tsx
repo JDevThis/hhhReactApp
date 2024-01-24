@@ -7,7 +7,7 @@ import SearchForm from '@/app/ui/searchForm';
 export default function SearchListing() {
   
   return (
-    <form>
+    <form className="space-y-6" action="./listings" method="POST">
       <div className="space-y-12">
 
         <div className="border-b border-gray-900/10 pb-12">
