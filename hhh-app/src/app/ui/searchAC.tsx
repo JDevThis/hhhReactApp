@@ -1,62 +1,64 @@
 'use client';
 import { Fragment, useState } from 'react'
 import { Combobox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { CheckIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 
+export default function SearchForm({ placeholder }: { placeholder: string }) {
+  
 const searchlists = [
-    { name: "1-1 classes", id: "1-1"},
-    { name: "Custom colouring", id: "cc"},
-    { name: "Custom wigs", id: "cw"},
-    { name: "Pre-made units", id: "pmu"},
-    { name: "Natural hair maintenance", id: "nhm"},
-    { name: "Ponytails", id: "pt"},
-    { name: "Sewins", id: "sewins"},
-    { name: "Hair wash", id: "hw"},
-    { name: "Relaxer", id: "relaxer"},
-    { name: "Lace frontal wig", id: "lfw"},
-    { name: "Lace closure", id: "lc"},
-    { name: "Shape ups", id: "sh"},
-    { name: "Skin fade", id: "sf"},
-    { name: "Trim", id: "trim"},
-    { name: "Beard shaping", id: "bs"},
-    { name: "Waves", id: "waves"},
-    { name: "Braids", id: "braids"},
-    { name: "Wash and go", id: "wag"},
-    { name: "Dreadlocks", id: "dreds"},
-    { name: "Mobile hair services", id: "mhs"},
-    { name: "Weddings", id: "weddings"},
-    { name: "Photoshoots", id: "pshoots"},
-    { name: "Prom", id: "prom"},
-    { name: "Grooming", id: "groom"},
+  { name: "1-1 classes", id: "1-1"},
+  { name: "Custom colouring", id: "cc"},
+  { name: "Custom wigs", id: "cw"},
+  { name: "Pre-made units", id: "pmu"},
+  { name: "Natural hair maintenance", id: "nhm"},
+  { name: "Ponytails", id: "pt"},
+  { name: "Sewins", id: "sewins"},
+  { name: "Hair wash", id: "hw"},
+  { name: "Relaxer", id: "relaxer"},
+  { name: "Lace frontal wig", id: "lfw"},
+  { name: "Lace closure", id: "lc"},
+  { name: "Shape ups", id: "sh"},
+  { name: "Skin fade", id: "sf"},
+  { name: "Trim", id: "trim"},
+  { name: "Beard shaping", id: "bs"},
+  { name: "Waves", id: "waves"},
+  { name: "Braids", id: "braids"},
+  { name: "Wash and go", id: "wag"},
+  { name: "Dreadlocks", id: "dreds"},
+  { name: "Mobile hair services", id: "mhs"},
+  { name: "Weddings", id: "weddings"},
+  { name: "Photoshoots", id: "pshoots"},
+  { name: "Prom", id: "prom"},
+  { name: "Grooming", id: "groom"},
 ]
 
-export default function SearchForm() {
   const [selected, setSelected] = useState(searchlists[0])
   const [query, setQuery] = useState('')
 
   const filteredSearchlists =
     query === ''
       ? searchlists
-      : searchlists.filter((person) =>
-          person.name
+      : searchlists.filter((searchlist) =>
+          searchlist.name
             .toLowerCase()
             .replace(/\s+/g, '')
             .includes(query.toLowerCase().replace(/\s+/g, ''))
         )
-
   return (
     <div className="relative col-span-full z-50">
-      <Combobox value={selected} onChange={setSelected}>
+      <Combobox onChange={setSelected}>
         <div className="relative mt-1">
           <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
             <Combobox.Input
               className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
-              displayValue={(person) => person.name}
+              displayValue={(searchlist) => searchlist.name}
               onChange={(event) => setQuery(event.target.value)}
               id='service'
+              name='service'
+              placeholder={placeholder}
             />
             <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
-              <ChevronUpDownIcon
+              <MagnifyingGlassIcon
                 className="h-5 w-5 text-gray-400"
                 aria-hidden="true"
               />
@@ -75,15 +77,15 @@ export default function SearchForm() {
                   Nothing found.
                 </div>
               ) : (
-                filteredSearchlists.map((person) => (
+                filteredSearchlists.map((searchlist) => (
                   <Combobox.Option
-                    key={person.id}
+                    key={searchlist.id}
                     className={({ active }) =>
                       `relative cursor-default select-none py-2 pl-10 pr-4 ${
                         active ? 'bg-teal-600 text-white' : 'text-gray-900'
                       }`
                     }
-                    value={person}
+                    value={searchlist}
                   >
                     {({ selected, active }) => (
                       <>
@@ -92,7 +94,7 @@ export default function SearchForm() {
                             selected ? 'font-medium' : 'font-normal'
                           }`}
                         >
-                          {person.name}
+                          {searchlist.name}
                         </span>
                         {selected ? (
                           <span

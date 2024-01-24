@@ -3,16 +3,23 @@ import SearchListing from '@/app/ui/searchListings';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-center p-3 bg-white">
-      <div className=" flex justify-center flex-col gap-4 md:flex-row">
-        <div className="flex justify-center rounded-lg ">
-          <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}> </p>
-          <div>
-            <SearchListing /> 
-          </div>
-        </div>
+    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="relative w-full max-w-{300px} aspect-[70/45] justify-center">
+            <Image
+                src="/hhhlogo.png"
+                fill
+                sizes="(max-width: 300px) 100vw, 700px"
+                priority
+                className="block py-[2px]"
+                alt="HisHerHub Logo"
+            />
+            </div>
       </div>
-    </main>
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <SearchListing /> 
+            </div>
+      </div>
 
   );
 }
