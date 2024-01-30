@@ -2,8 +2,10 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
+    "@nextui-org/react": "^2.2.9",
     "@vercel/postgres": "^0.7.2",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.0.3",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {

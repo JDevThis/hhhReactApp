@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NavBar from '@/app/ui/navbar';
-
+import "./compiled.css";
+import TopNav from '@/app/ui/topnav';
+import SideNav from '@/app/ui//sidenav';
+import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,9 +19,21 @@ export default function RootLayout({
 }>) {
   return (
     <html className="h-full bg-white" lang="en">
-      <body style={{backgroundColor: "white"}} className={inter.className} ><NavBar />
-      {children}
+      <body style={{backgroundColor: "white"}} className={inter.className} >
+      <div className="alm">
+        <div>
+              <TopNav />
+              <main className="arq">
+                <div className="arh cez dde">
+                <div className="ab ph adf adx afw bbd">
+                  {children}
+                  </div>
+                </div>
+              </main>
+        </div>
+      </div>
       </body>
     </html>
   );
 }
+

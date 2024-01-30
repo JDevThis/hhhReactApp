@@ -1,6 +1,6 @@
 
 import LoginForm from '@/app/ui/login-form';
 
-export default function Page() {
-    return <LoginForm/>;
+export default function Login() {
+    return (<LoginForm/>);
   }

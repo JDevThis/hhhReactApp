@@ -12,7 +12,7 @@ async function seedUsers(client) {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     // Create the "users" table if it doesn't exist
     const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS users (
+      CREATE TABLE IF NOT EXISTS hhhusers (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         email TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL
@@ -26,7 +26,7 @@ async function seedUsers(client) {
       users.map(async (user) => {
         const hashedPassword = await bcrypt.hash(user.password, 10);
         return client.sql`
-        INSERT INTO users (id, email, password)
+        INSERT INTO hhhusers (id, email, password)
         VALUES (${user.id}, ${user.email}, ${hashedPassword})
         ON CONFLICT (id) DO NOTHING;
       `;

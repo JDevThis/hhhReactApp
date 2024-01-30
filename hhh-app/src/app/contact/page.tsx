@@ -14,8 +14,9 @@ export default function Contact() {
             />
             </div>
       </div>
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm text-center">
+        Contact Page
+      To be added
             </div>
       </div>
   );
