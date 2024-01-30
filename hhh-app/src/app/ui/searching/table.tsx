@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ViewBusinessInfo, ViewBusiness} from '@/app/ui/listings/buttons';
+import { ViewBusiness} from '@/app/ui/listings/buttons';
 import fetchFilteredBusiness from "@/app/lib/data";
 
 export default async function InvoicesTable({

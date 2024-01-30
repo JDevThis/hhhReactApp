@@ -1,8 +1,7 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
-import HhhLogo from '@/app/ui/hhh-logo';
-import { ArrowPathIcon, ArrowRightIcon, ExclamationCircleIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, ExclamationCircleIcon } from "@heroicons/react/24/outline";
 import { Button } from '@/app/ui/button';
 import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '@/app/lib/actions';
@@ -36,7 +35,7 @@ export default function LoginForm() {
         <div className="flex items-center justify-between">
           <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
           <div className="text-sm">
-            <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+            <Link href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</Link>
           </div>
         </div>
         <div className="mt-2">
@@ -64,7 +63,7 @@ export default function LoginForm() {
 
     <p className="mt-10 text-center text-sm text-gray-500">
       Not a member?
-      <a href="/register" className="jw font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Register here</a>
+      <Link href="/register" className="jw font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Register here</Link>
     </p>
   </div>
 </div>

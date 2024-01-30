@@ -1,9 +1,6 @@
 'use client'
-import Image from "next/image";
-import Link from "next/link";
-import HhhLogo from '@/app/ui/hhh-logo';
-import { ArrowPathIcon, ArrowRightIcon, ExclamationCircleIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { useFormState, useFormStatus } from 'react-dom';
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { useFormStatus } from 'react-dom';
 import { Button } from "./button";
 
 export default function SearchListing() {
