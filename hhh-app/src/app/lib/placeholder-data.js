@@ -68,7 +68,7 @@ const socials = [
   },
 ];
 
-module.exports = {
+export default {
   users,
   profile,
   business,

@@ -3,9 +3,7 @@ import { sql } from '@vercel/postgres';
 import { unstable_noStore as noStore } from 'next/cache';
 import {
   User,
-  Profile,
   Business,
-  Socials,
 } from './definitions';
 
 const ITEMS_PER_PAGE = 3;
