@@ -17,7 +17,7 @@ export default async function InvoicesTable({
         <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
           <div className="md:flex">
           {businesses?.map((userbusiness) => (
-          <div className="max-w-md rounded overflow-auto shadow-lg">
+          <div className="max-w-md rounded overflow-auto shadow-lg" key={userbusiness.id}>
             
           <Image
                     src="/hhhlogo.PNG"

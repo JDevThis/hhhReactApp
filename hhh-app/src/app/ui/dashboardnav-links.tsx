@@ -29,9 +29,9 @@ import Link from 'next/link';
         {links.map((link) => {
           const LinkIcon = link.icon;
           return (
-            <li>
+            <li key={link.name}>
             <Link
-              key={link.name}
+              
               href={link.href}
               className="ajr bag bqe lx aaf adu aqp avz awo awf"
             >
