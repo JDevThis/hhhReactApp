@@ -1,13 +1,20 @@
 'use server';
-import { ZodError, z } from 'zod';
+import {  z } from 'zod';
 import { sql } from '@vercel/postgres';
-import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
 import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
-import { FormStatusPending } from 'react-dom';
 const bcrypt = require('bcrypt');
-
+const schema = z.object({
+  service: z.string({
+    invalid_type_error: 'Invalid service',
+  }),
+  location: z.string({
+    invalid_type_error: 'Invalid location',
+  }),
+  gender: z.string({
+    invalid_type_error: 'Invalid gender',
+  }),
+})
 
 export async function authenticate(
   prevState: string | undefined,
@@ -168,10 +175,6 @@ if (data.password === data.c_password) {
       message: "Error registering user",
     };
   }
-
-    // Revalidate the cache for the invoices page and redirect the user.
-    revalidatePath('/dashboard/');
-    redirect('/dashboard/');
 } else {
   console.log("Password doesn't match");
 }
