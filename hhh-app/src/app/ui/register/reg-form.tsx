@@ -6,10 +6,10 @@ import { ArrowPathIcon, ArrowRightIcon, ExclamationCircleIcon, MagnifyingGlassIc
 import { Button } from '@/app/ui/button';
 import { useFormState, useFormStatus } from 'react-dom';
 import { createUser } from '@/app/lib/actions';
-import { servicescheckbox } from "./serviceslist";
+import { servicescheckbox } from "../serviceslist";
 import { useState } from "react";
 
-export default function RegisterForm({ message, formData }: { message: '', formData: FormData }) {
+export default function RegisterForm() {
   const [checkedState, setCheckedState] = useState(
     new Array(servicescheckbox.length).fill(false)
   );
@@ -258,7 +258,7 @@ export default function RegisterForm({ message, formData }: { message: '', formD
       {errorMessage && (
         <>
           <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-          <p className="text-sm text-red-500">{errorMessage.message}</p>
+          <p className="text-sm text-red-500">{errorMessage}</p>
         </>
       )}
     </div>

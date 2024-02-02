@@ -1,5 +1,5 @@
 
-import { RegisterForm } from '@/app/ui/register/reg2';
+import RegisterForm from '@/app/ui/register/reg-form';
 import { Metadata } from 'next';
  
 export const metadata: Metadata = {
