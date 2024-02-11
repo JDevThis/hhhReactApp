@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="h-full bg-white" lang="en">
-      <body style={{backgroundColor: "white"}} className={inter.className} >
+    <html className="h-full bg-white adf" lang="en">
+      <body style={{backgroundColor: "white"}} className={inter.className } >
       <div className="alm">
         <div>
               <TopNav />
