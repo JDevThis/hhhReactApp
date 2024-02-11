@@ -5,10 +5,10 @@ import HhhLogo from '@/app/ui/hhh-logo';
 import { ArrowPathIcon, ArrowRightIcon, ExclamationCircleIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Button } from '@/app/ui/button';
 import { useFormState, useFormStatus } from 'react-dom';
-import { createUser } from '@/app/lib/actions';
+import { regUser } from '@/app/lib/actions';
 import { servicescheckbox } from "../serviceslist";
 import { useState } from "react";
-
+const initialState = { message: '', errors: {} };
 export default function RegisterForm() {
   const [checkedState, setCheckedState] = useState(
     new Array(servicescheckbox.length).fill(false)
@@ -20,7 +20,10 @@ export default function RegisterForm() {
 
     setCheckedState(updatedCheckedState);
   }
-  const [errorMessage, dispatch] = useFormState(createUser, undefined);
+  
+
+  const [state, dispatch] = useFormState(regUser, initialState);
+
     return (
 <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -43,10 +46,17 @@ export default function RegisterForm() {
         <div>
           <label htmlFor="email" className="block text-sm font-medium mt-2 leading-6 text-gray-900">Email address</label>
           <div className="mt-2">
-            <input id="email" name="email" type="email" autoComplete="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+            <input id="email" name="email" type="email" autoComplete="email"  aria-describedby="customer-error" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
           </div>
         </div>
-
+        <div id="customer-error" aria-live="polite" aria-atomic="true">
+        {state.errors?.email &&
+          state.errors.email.map((error: string) => (
+            <p className="mt-2 text-sm text-red-500" key={error}>
+              {error}
+            </p>
+          ))}
+      </div>
         <div>
           <div className="flex yz justify-between">
             <label htmlFor="password" className="block text-sm font-medium mt-2 leading-6 text-gray-900">Password</label>
@@ -249,19 +259,6 @@ export default function RegisterForm() {
             <RegisterButton />
           </div>
         </div>
-
-      <div
-      className="flex h-4 items-end space-x-1"
-      aria-live="polite"
-      aria-atomic="true"
-    >
-      {errorMessage && (
-        <>
-          <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-          <p className="text-sm text-red-500">{errorMessage}</p>
-        </>
-      )}
-    </div>
     </form>
 
     <p className="mt-10 text-center text-sm text-gray-500">
