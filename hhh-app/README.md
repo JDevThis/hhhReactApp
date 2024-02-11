@@ -1,4 +1,5 @@
 #search list 
+implement search query for search list in listing and in home page
 
 const searchlists = [
   { name: "1-1 classes", id: "1-1"},
@@ -26,3 +27,11 @@ const searchlists = [
   { name: "Prom", id: "prom"},
   { name: "Grooming", id: "groom"},
 ]
+
+
+redesign search result card
+
+implement google Oauth form
+
+implement instagram Oauth form
+get instagram images and posts
